@@ -1,0 +1,152 @@
+.section { background: var(--off-white); }
+
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.subTitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-mid);
+  font-style: italic;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.left { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.block { padding: 1.5rem; }
+
+.blockHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.875rem;
+}
+
+.blockHeader h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.blockIcon { color: var(--crimson); flex-shrink: 0; }
+
+.blockText {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+.reqList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reqList li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-mid);
+}
+
+.reqCheck { color: var(--crimson-light); flex-shrink: 0; }
+
+.outcome {}
+
+.outcomeBox {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--pink-pale), var(--off-white));
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--crimson);
+}
+
+.outcomeLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.outcomeBox p {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+.right { position: sticky; top: 90px; }
+
+.erdCard { padding: 1.75rem; }
+
+.erdHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.erdBadge {
+  padding: 0.25rem 0.75rem;
+  background: var(--pink-pale);
+  color: var(--crimson);
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 1px solid rgba(139,0,0,0.12);
+}
+
+.erd {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: var(--off-white);
+  padding: 0.5rem;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--stone);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--text-mid);
+}
+
+.legendDot {
+  width: 8px; height: 8px;
+  border-radius: 2px;
+  background: var(--crimson);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .right { position: static; }
+}
