@@ -22,16 +22,15 @@ function ERDiagram() {
 
       {/* Entities */}
       {[
-        { x: 20, y: 100, w: 110, label: 'PATIENT', fields: ['id', 'name', 'dob', 'contact'] },
-        { x: 185, y: 30, w: 110, label: 'APPOINTMENT', fields: ['id', 'date', 'status', 'notes'] },
-        { x: 185, y: 170, w: 110, label: 'DOCTOR', fields: ['id', 'name', 'specialty', 'schedule'] },
-        { x: 350, y: 100, w: 110, label: 'NOTIFICATION', fields: ['id', 'type', 'sent_at'] },
+        { x: 20, y: 100, w: 120, label: 'RAW DATA', fields: ['id', 'raw_text', 'source'] },
+        { x: 180, y: 30, w: 120, label: 'CLEANED DATA', fields: ['id', 'normalized_text', 'status'] },
+        { x: 180, y: 170, w: 120, label: 'MATCHING ENGINE', fields: ['method', 'threshold', 'score'] },
+        { x: 340, y: 100, w: 120, label: 'FINAL DATASET', fields: ['id', 'deduplicated_text', 'quality_flag'] },
       ].map(({ x, y, w, label, fields }) => (
         <g key={label}>
           <rect x={x} y={y} width={w} height={22} rx="5" fill="url(#g1)" />
           <text x={x + w/2} y={y + 15} textAnchor="middle" fill="white" fontSize="9" fontWeight="700" fontFamily="DM Sans, sans-serif">{label}</text>
-          <rect x={x} y={y + 22} width={w} height={fields.length * 18 + 8} rx="0" fill="white" stroke="#EDE8E4" strokeWidth="1" />
-          <rect x={x} y={y + 22 + fields.length * 18 + 8 - 5} width={w} height={5} rx="3" fill="white" />
+          <rect x={x} y={y + 22} width={w} height={fields.length * 18 + 8} fill="white" stroke="#EDE8E4" strokeWidth="1" />
           {fields.map((f, i) => (
             <text key={f} x={x + 12} y={y + 36 + i * 18} fill="#4A3F3A" fontSize="8" fontFamily="DM Sans, sans-serif">{f}</text>
           ))}
@@ -39,19 +38,19 @@ function ERDiagram() {
       ))}
 
       {/* Relationships */}
-      <line x1="130" y1="130" x2="185" y2="90" stroke="#C0152A" strokeWidth="1.5" strokeOpacity="0.5" markerEnd="url(#arrow)" strokeDasharray="4,3" />
-      <line x1="130" y1="150" x2="185" y2="200" stroke="#C0152A" strokeWidth="1.5" strokeOpacity="0.5" markerEnd="url(#arrow)" strokeDasharray="4,3" />
-      <line x1="295" y1="70" x2="350" y2="120" stroke="#C0152A" strokeWidth="1.5" strokeOpacity="0.5" markerEnd="url(#arrow)" strokeDasharray="4,3" />
-      <line x1="295" y1="200" x2="350" y2="150" stroke="#C0152A" strokeWidth="1.5" strokeOpacity="0.5" markerEnd="url(#arrow)" strokeDasharray="4,3" />
+      <line x1="140" y1="130" x2="180" y2="80" stroke="#C0152A" strokeWidth="1.5" strokeOpacity="0.5" markerEnd="url(#arrow)" strokeDasharray="4,3" />
+      <line x1="140" y1="150" x2="180" y2="200" stroke="#C0152A" strokeWidth="1.5" strokeOpacity="0.5" markerEnd="url(#arrow)" strokeDasharray="4,3" />
+      <line x1="300" y1="80" x2="340" y2="120" stroke="#C0152A" strokeWidth="1.5" strokeOpacity="0.5" markerEnd="url(#arrow)" strokeDasharray="4,3" />
+      <line x1="300" y1="200" x2="340" y2="150" stroke="#C0152A" strokeWidth="1.5" strokeOpacity="0.5" markerEnd="url(#arrow)" strokeDasharray="4,3" />
 
-      {/* Cardinality labels */}
+      {/* Labels */}
       {[
-        { x: 150, y: 108, text: '1:N' },
-        { x: 150, y: 168, text: 'N:1' },
-        { x: 310, y: 88, text: '1:N' },
-        { x: 310, y: 183, text: '1:N' },
+        { x: 150, y: 110, text: 'cleaning' },
+        { x: 150, y: 170, text: 'matching' },
+        { x: 310, y: 95, text: 'processed' },
+        { x: 310, y: 185, text: 'deduplicated' },
       ].map(({ x, y, text }) => (
-        <text key={`${x}-${y}`} x={x} y={y} fill="#E63950" fontSize="8" fontWeight="700" fontFamily="DM Sans, sans-serif">{text}</text>
+        <text key={`${x}-${y}`} x={x} y={y} fill="#E63950" fontSize="8" fontWeight="700">{text}</text>
       ))}
     </svg>
   );
@@ -126,21 +125,21 @@ export default function CaseStudy() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <div className={`card ${styles.erdCard}`}>
-              <div className={styles.erdHeader}>
-                <span className="section-label" style={{ margin: 0 }}>Entity Relationship Diagram</span>
-                <span className={styles.erdBadge}>Hospital AMS</span>
-              </div>
-              <ERDiagram />
-              <div className={styles.legend}>
-                {['Patient', 'Appointment', 'Doctor', 'Notification'].map((e, i) => (
-                  <span key={e} className={styles.legendItem}>
-                    <span className={styles.legendDot} style={{ opacity: 1 - i * 0.15 }} />
-                    {e}
-                  </span>
-                ))}
-              </div>
+          <div className={`card ${styles.erdCard}`}>
+            <div className={styles.erdHeader}>
+              <span className="section-label" style={{ margin: 0 }}>Data Processing Flow</span>
+              <span className={styles.erdBadge}>Fuzzy Cleaning</span>
             </div>
+            <ERDiagram />
+            <div className={styles.legend}>
+              {['Raw Data', 'Cleaned Data', 'Matching Engine', 'Final Dataset'].map((e, i) => (
+                <span key={e} className={styles.legendItem}>
+                  <span className={styles.legendDot} style={{ opacity: 1 - i * 0.15 }} />
+                  {e}
+                </span>
+              ))}
+            </div>
+          </div>
           </motion.div>
         </div>
       </div>

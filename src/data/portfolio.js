@@ -5,7 +5,8 @@ export const personal = {
   email: "wdyapramestika@gmail.com",
   linkedin: "https://www.linkedin.com/in/widiyatika/",
   github: "https://github.com",
-  cvUrl: "#",
+  cvUrl: "/Widiya-Pramestika-CV.pdf",
+  whatsapp: '6285791514810',
 };
 
 export const skills = [
@@ -37,63 +38,80 @@ export const skills = [
 
 export const projects = [
   {
-    title: "Retail Sales Forecasting Engine",
-    problem: "A mid-size retail chain was experiencing 23% inventory waste due to inaccurate demand forecasting.",
-    tools: ["Python", "Prophet", "SQL", "Power BI"],
-    process: "Cleaned 3 years of transactional data, engineered seasonal features, built Prophet time-series models per SKU category.",
-    insight: "Reduced forecasting error by 34% and cut inventory waste by $480K annually.",
-    visual: "bar",
+      title: "Automated Data Cleaning with Fuzzy Matching",
+      problem: "Manual cleaning of inconsistent and unstructured text data led to inefficiencies and frequent data quality issues.",
+      tools: ["Python", "Pandas", "NumPy", "RapidFuzz", "FuzzyWuzzy"],
+      process: "Developed automated pipelines for text normalization and cleaning, and implemented fuzzy matching algorithms to identify and reconcile duplicate or inconsistent records.",
+      insight: "Reduced manual workload and significantly improved data-processing efficiency and reliability for downstream analytics.",
+      visual: "table",
   },
-  {
-    title: "Customer Churn Prediction",
-    problem: "Telecom company losing 18% of customers monthly with no early-warning system.",
-    tools: ["Python", "XGBoost", "SHAP", "Tableau"],
-    process: "Built binary classifier on 50K customer records, used SHAP for explainability, deployed risk score dashboard.",
-    insight: "Model achieved 89% AUC. Retention campaigns triggered on top 15% at-risk customers.",
-    visual: "donut",
+ {
+    title: "Music Genre Classification (Major vs Minor)",
+    problem: "Understanding how audio features influence musical characteristics is complex and difficult to analyze manually.",
+    tools: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
+    process: "Analyzed audio features such as tempo, energy, and mode; performed preprocessing and feature selection; and trained classification models to predict major or minor characteristics.",
+    insight: "Built a reliable classification model and uncovered key audio features that significantly influence genre characteristics.",
+    visual: "scatter",
   },
-  {
-    title: "Supply Chain Anomaly Detector",
-    problem: "Manual review of 10,000+ daily shipment records for fraud was unsustainable.",
-    tools: ["Python", "Isolation Forest", "PostgreSQL", "Streamlit"],
-    process: "Implemented unsupervised anomaly detection on shipment patterns, built real-time alerting dashboard.",
-    insight: "Flagged 127 fraudulent transactions in first month, saving $92K.",
-    visual: "line",
+   {
+    title: "Point of Sale (POS) System",
+    problem: "Small retail stores often lack simple and affordable systems to manage inventory and daily transactions efficiently.",
+    tools: ["Python"],
+    process: "Developed a desktop-based POS application with CRUD functionality for product management and transaction processing, structured using modular programming practices for maintainability.",
+    insight: "Delivered a functional prototype that streamlined basic store operations and improved transaction recording efficiency.",
+    visual: "table",
   },
 ];
 
 export const caseStudy = {
-  title: "Hospital Appointment Management System",
-  problem: "A private hospital's scheduling system relied on paper-based processes, leading to 40% appointment overlap and 3-hour average patient wait times.",
+  title: "Automated Data Cleaning System with Fuzzy Matching",
+  problem: "Data processing workflows relied heavily on manual cleaning of inconsistent and unstructured text data, leading to inefficiencies, duplicated records, and unreliable datasets for analysis.",
   requirements: [
-    { type: "Functional", items: ["Online appointment booking", "Doctor schedule management", "Patient record integration", "Automated reminders (SMS/Email)", "Reporting dashboard"] },
-    { type: "Non-Functional", items: ["99.9% uptime SLA", "Response time < 2s", "HIPAA compliant data storage", "Mobile-responsive interface"] },
+    { 
+      type: "Functional", 
+      items: [
+        "Automated text normalization and cleaning",
+        "Duplicate and inconsistency detection",
+        "Fuzzy matching for record reconciliation",
+        "Batch data processing pipeline",
+        "Export cleaned dataset for analysis"
+      ] 
+    },
+    { 
+      type: "Non-Functional", 
+      items: [
+        "High processing efficiency for large datasets",
+        "Scalable data pipeline",
+        "Maintainable and modular code structure",
+        "High accuracy in duplicate detection"
+      ] 
+    },
   ],
-  solution: "Designed a microservices architecture with a React frontend, Node.js API gateway, and PostgreSQL database. Implemented calendar-based conflict detection and patient notification workflows.",
-  outcome: "Wait times reduced to 45 minutes. Appointment overlap eliminated. Staff admin time cut by 60%.",
+  solution: "Developed an automated data cleaning pipeline using Python, Pandas, and NumPy. Implemented fuzzy matching algorithms (RapidFuzz, FuzzyWuzzy) to identify and reconcile inconsistent records, reducing reliance on manual cleaning.",
+  outcome: "Significantly reduced manual data cleaning effort and improved dataset consistency, resulting in more reliable data for downstream analytics and reporting.",
 };
 
 export const annotationWork = [
   {
-    title: "Medical Image Segmentation",
-    tool: "CVAT",
-    type: "Polygon + Semantic Segmentation",
-    description: "Annotated 12,000 chest X-ray images for pneumonia detection model. Defined 6 label classes with strict medical ontology.",
-    stats: { images: "12,000+", accuracy: "98.4%", classes: 6 },
+    title: "Music Genre Classification Dataset",
+    tool: "Python (Pandas, Scikit-learn)",
+    type: "Data Preprocessing & Feature Engineering",
+    description: "Processed and prepared audio feature datasets (tempo, energy, mode) for machine learning classification tasks (major vs minor).",
+    stats: { samples: "N/A", features: "Multiple audio attributes", model: "Classification" },
   },
   {
-    title: "Sentiment NLP Dataset",
-    tool: "Label Studio",
-    type: "Text Classification",
-    description: "Built a 50K-tweet sentiment dataset for a social media monitoring product. Implemented inter-annotator agreement checks.",
-    stats: { samples: "50,000", agreement: "94.2%", labels: 4 },
+    title: "Retail Sales Forecasting Dataset",
+    tool: "Python (Pandas, Prophet)",
+    type: "Time Series Data Preparation",
+    description: "Cleaned and structured transactional sales data, engineered seasonal features, and prepared datasets for time-series forecasting models.",
+    stats: { period: "3 years", granularity: "SKU-level", model: "Forecasting" },
   },
   {
-    title: "Autonomous Vehicle Object Detection",
-    tool: "Roboflow",
-    type: "Bounding Box Detection",
-    description: "Annotated dashcam footage with 8 object classes (pedestrians, vehicles, signs) for self-driving training pipelines.",
-    stats: { frames: "8,500", classes: 8, precision: "96.1%" },
+    title: "POS Transaction Data Handling",
+    tool: "Python",
+    type: "CRUD & Data Management",
+    description: "Managed product and transaction data through CRUD operations in a POS system prototype, ensuring structured and consistent data storage.",
+    stats: { system: "Desktop App", features: "CRUD", scope: "Small retail operations" },
   },
 ];
 
