@@ -1,126 +1,138 @@
 ---
 ---
 
-<section class="py-xxl px-gutter max-w-container-max mx-auto border-t border-outline-variant/20 dark:border-outline/10 scroll-reveal" id="work">
-  <div class="text-center mb-xl space-y-md">
-    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface dark:text-surface font-headline-md">Featured Work</h2>
+<section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 max-w-[1200px] mx-auto scroll-reveal" id="work">
+  <div class="mb-12 sm:mb-16">
+    <p class="text-xs font-semibold text-primary dark:text-primary-fixed-dim uppercase tracking-[0.2em] mb-2">Selected Projects</p>
+    <h2 class="text-2xl sm:text-3xl font-bold text-on-surface dark:text-surface font-headline-md">Featured Work</h2>
   </div>
-  <div class="flex flex-col gap-xl" id="projectGrid">
+
+  <!-- Project List -->
+  <div class="project-list" id="projectGrid">
     <!-- Project 1 -->
-    <div class="rounded-2xl border border-outline-variant/30 dark:border-outline/20 data-card surface-card bg-surface dark:bg-surface-container-lowest overflow-hidden flex flex-col md:flex-row">
-      <div class="md:w-1/2 aspect-video relative bg-gradient-to-br from-coral-red/20 to-primary/20 flex items-center justify-center">
-        <span class="font-headline-md text-primary/50 mix-blend-overlay text-4xl">Project Mockup</span>
-        <div class="absolute top-4 left-4 font-display-xl text-primary/30">01</div>
+    <article class="project-item">
+      <div class="project-meta">
+        <span class="project-number">01</span>
+        <span class="project-date">Jan — May 2025</span>
       </div>
-      <div class="md:w-1/2 p-lg flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-sm mb-sm">
-            <span class="px-2 py-1 rounded bg-red-500/10 text-red-600 text-[10px] font-bold uppercase tracking-wider">🔴 High Impact</span>
-          </div>
-          <h3 class="font-headline-md text-on-surface dark:text-surface mb-md">Automation Data Cleaning Pipeline</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-md mb-md text-sm">
-            <div>
-              <h4 class="font-label-bold text-primary dark:text-primary-fixed-dim mb-xs uppercase text-[10px]">Problem</h4>
-              <p class="text-on-surface-variant dark:text-surface-variant">Manual data entry leading to errors and 10h/week wasted.</p>
-            </div>
-            <div>
-              <h4 class="font-label-bold text-primary dark:text-primary-fixed-dim mb-xs uppercase text-[10px]">Solution</h4>
-              <p class="text-on-surface-variant dark:text-surface-variant">Automated Python script with robust error handling.</p>
-            </div>
-            <div>
-              <h4 class="font-label-bold text-primary dark:text-primary-fixed-dim mb-xs uppercase text-[10px]">Tools Used</h4>
-              <p class="text-on-surface-variant dark:text-surface-variant">Python, Pandas, SQL</p>
-            </div>
-          </div>
-          <div class="mb-md p-sm bg-primary/5 rounded-lg border border-primary/10">
-            <span class="block text-caption text-on-surface-variant uppercase mb-1">Impact Metric</span>
-            <span class="font-headline-md text-primary">100% Time Saved</span>
-          </div>
+      <div class="project-content">
+        <div class="project-header">
+          <h3 class="project-title">Automation Data Cleaning</h3>
+          <span class="project-tag">Fuzzy Matching</span>
         </div>
-        <div class="flex gap-sm mt-4">
-          <button class="px-md py-sm rounded-full bg-primary text-on-primary hover:bg-primary/90 btn-hover font-label-bold text-caption flex items-center gap-xs">View Detail</button>
-          <button class="px-md py-sm rounded-full border border-primary text-primary dark:text-primary-fixed-dim hover:bg-primary/5 btn-hover font-label-bold text-caption flex items-center gap-xs">GitHub Repo</button>
+        <p class="project-desc">
+          Automated text cleaning and normalization using Python, Pandas, and NumPy. Applied fuzzy matching algorithms (RapidFuzz, FuzzyWuzzy) to detect and reconcile inconsistent or duplicate records.
+        </p>
+        <div class="project-tools">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>NumPy</span>
+          <span>RapidFuzz</span>
         </div>
       </div>
-    </div>
+      <div class="project-arrow">
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </div>
+    </article>
 
     <!-- Project 2 -->
-    <div class="rounded-2xl border border-outline-variant/30 dark:border-outline/20 data-card surface-card bg-surface dark:bg-surface-container-lowest overflow-hidden flex flex-col md:flex-row-reverse">
-      <div class="md:w-1/2 aspect-video relative bg-gradient-to-bl from-secondary/20 to-tertiary/20 flex items-center justify-center">
-        <span class="font-headline-md text-secondary/50 mix-blend-overlay text-4xl">Project Mockup</span>
-        <div class="absolute top-4 right-4 font-display-xl text-secondary/30">02</div>
+    <article class="project-item">
+      <div class="project-meta">
+        <span class="project-number">02</span>
+        <span class="project-date">Jun — Aug 2024</span>
       </div>
-      <div class="md:w-1/2 p-lg flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-sm mb-sm">
-            <span class="px-2 py-1 rounded bg-blue-500/10 text-blue-600 text-[10px] font-bold uppercase tracking-wider">🤖 Machine Learning</span>
-          </div>
-          <h3 class="font-headline-md text-on-surface dark:text-surface mb-md">Music Genre Classification</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-md mb-md text-sm">
-            <div>
-              <h4 class="font-label-bold text-secondary dark:text-secondary-fixed-dim mb-xs uppercase text-[10px]">Problem</h4>
-              <p class="text-on-surface-variant dark:text-surface-variant">Uncategorized vast audio libraries.</p>
-            </div>
-            <div>
-              <h4 class="font-label-bold text-secondary dark:text-secondary-fixed-dim mb-xs uppercase text-[10px]">Solution</h4>
-              <p class="text-on-surface-variant dark:text-surface-variant">Trained classification models extracting audio features.</p>
-            </div>
-            <div>
-              <h4 class="font-label-bold text-secondary dark:text-secondary-fixed-dim mb-xs uppercase text-[10px]">Tools Used</h4>
-              <p class="text-on-surface-variant dark:text-surface-variant">Scikit-learn, Librosa</p>
-            </div>
-          </div>
-          <div class="mb-md">
-            <span class="block text-caption text-on-surface-variant uppercase mb-1">Model Accuracy</span>
-            <div class="flex items-center gap-2">
-              <div class="w-full bg-outline-variant/30 rounded-full h-2.5">
-                <div class="bg-secondary h-2.5 rounded-full" style="width: 85%"></div>
-              </div>
-              <span class="text-sm font-label-bold text-secondary">85%</span>
-            </div>
-          </div>
+      <div class="project-content">
+        <div class="project-header">
+          <h3 class="project-title">Prediksi Genre Musik</h3>
+          <span class="project-tag">Major/Minor</span>
         </div>
-        <div class="flex gap-sm mt-4">
-          <button class="px-md py-sm rounded-full bg-secondary text-white hover:bg-secondary/90 btn-hover font-label-bold text-caption flex items-center gap-xs">View Detail</button>
+        <p class="project-desc">
+          Machine learning classification to predict music genre characteristics. Analyzed key features like tempo, energy, and mode to build a reliable predictive model with accuracy evaluation.
+        </p>
+        <div class="project-tools">
+          <span>Scikit-learn</span>
+          <span>Python</span>
+          <span>Classification</span>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="project-arrow">
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </div>
+    </article>
 
-  <!-- Hidden Projects -->
-  <div class="flex flex-col gap-xl mt-xl hidden-projects" id="hiddenProjects">
-    <div class="rounded-2xl border border-outline-variant/30 dark:border-outline/20 data-card surface-card bg-surface dark:bg-surface-container-lowest overflow-hidden flex flex-col md:flex-row">
-      <div class="md:w-1/2 aspect-video relative bg-gradient-to-br from-tertiary/20 to-primary/20 flex items-center justify-center">
-        <span class="font-headline-md text-tertiary/50 mix-blend-overlay text-4xl">Project Mockup</span>
-        <div class="absolute top-4 left-4 font-display-xl text-tertiary/30">03</div>
+    <!-- Project 3 -->
+    <article class="project-item">
+      <div class="project-meta">
+        <span class="project-number">03</span>
+        <span class="project-date">Jun — Aug 2024</span>
       </div>
-      <div class="md:w-1/2 p-lg flex flex-col justify-center">
-        <h3 class="font-headline-md text-on-surface dark:text-surface mb-md">Team Performance Dashboard</h3>
-        <p class="text-on-surface-variant dark:text-surface-variant mb-md">Interactive Tableau dashboard to track KPI metrics across departments.</p>
-        <div class="flex gap-sm mt-4">
-          <button class="px-md py-sm rounded-full bg-tertiary text-white hover:bg-tertiary/90 btn-hover font-label-bold text-caption flex items-center gap-xs">View Dashboard</button>
+      <div class="project-content">
+        <div class="project-header">
+          <h3 class="project-title">E-Literasi</h3>
+          <span class="project-tag">Flutter App</span>
+        </div>
+        <p class="project-desc">
+          Led end-to-end development of a digital reading application as Project Manager. Coordinated developers and UI/UX designers, defined timelines, and oversaw feature planning.
+        </p>
+        <div class="project-tools">
+          <span>Flutter</span>
+          <span>Project Management</span>
+          <span>Team Lead</span>
         </div>
       </div>
-    </div>
-
-    <div class="rounded-2xl border border-outline-variant/30 dark:border-outline/20 data-card surface-card bg-surface dark:bg-surface-container-lowest overflow-hidden flex flex-col md:flex-row-reverse">
-      <div class="md:w-1/2 aspect-video relative bg-gradient-to-bl from-primary/20 to-coral-red/20 flex items-center justify-center">
-        <span class="font-headline-md text-primary/50 mix-blend-overlay text-4xl">Project Mockup</span>
-        <div class="absolute top-4 right-4 font-display-xl text-primary/30">04</div>
+      <div class="project-arrow">
+        <span class="material-symbols-outlined">arrow_forward</span>
       </div>
-      <div class="md:w-1/2 p-lg flex flex-col justify-center">
-        <h3 class="font-headline-md text-on-surface dark:text-surface mb-md">POS System Data Analysis</h3>
-        <p class="text-on-surface-variant dark:text-surface-variant mb-md">Analyzed sales data from Point of Sale systems to optimize inventory.</p>
-        <div class="flex gap-sm mt-4">
-          <button class="px-md py-sm rounded-full bg-primary text-on-primary hover:bg-primary/90 btn-hover font-label-bold text-caption flex items-center gap-xs">View Analysis</button>
+    </article>
+
+    <!-- Project 4 -->
+    <article class="project-item">
+      <div class="project-meta">
+        <span class="project-number">04</span>
+        <span class="project-date">Apr — Oct 2023</span>
+      </div>
+      <div class="project-content">
+        <div class="project-header">
+          <h3 class="project-title">Traco</h3>
+          <span class="project-tag">PKM Funded</span>
+        </div>
+        <p class="project-desc">
+          Smart City transportation system for Bandung. Mobile-based app developed for PKM competition — successfully received funding. Handled version control, unit testing, and UI testing.
+        </p>
+        <div class="project-tools">
+          <span>Mobile App</span>
+          <span>Git</span>
+          <span>Testing</span>
         </div>
       </div>
-    </div>
-  </div>
+      <div class="project-arrow">
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </div>
+    </article>
 
-  <div class="text-center mt-xl">
-    <button class="px-lg py-md rounded-full border border-primary text-primary dark:text-primary-fixed-dim dark:border-primary-fixed-dim hover:bg-primary/5 btn-hover font-label-bold text-label-bold inline-flex items-center gap-sm" id="toggleProjectsBtn">
-      See All Projects <span class="material-symbols-outlined text-body-md" id="toggleIcon">arrow_downward</span>
-    </button>
+    <!-- Project 5 -->
+    <article class="project-item">
+      <div class="project-meta">
+        <span class="project-number">05</span>
+        <span class="project-date">Nov 2022 — Mar 2023</span>
+      </div>
+      <div class="project-content">
+        <div class="project-header">
+          <h3 class="project-title">POS Toko</h3>
+          <span class="project-tag">Python</span>
+        </div>
+        <p class="project-desc">
+          Simple Point of Sale application for small stores. Built with modular programming practices, implemented CRUD features for product data and transaction processing.
+        </p>
+        <div class="project-tools">
+          <span>Python</span>
+          <span>CRUD</span>
+          <span>Desktop App</span>
+        </div>
+      </div>
+      <div class="project-arrow">
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </div>
+    </article>
   </div>
 </section>

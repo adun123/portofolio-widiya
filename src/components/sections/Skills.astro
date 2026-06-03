@@ -1,43 +1,145 @@
 ---
 ---
 
-<section class="py-xxl px-gutter max-w-container-max mx-auto border-t border-outline-variant/20 dark:border-outline/10 scroll-reveal" id="skills">
-  <div class="text-center mb-xl space-y-md">
-    <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface dark:text-surface font-headline-md">Technical Arsenal</h2>
-    <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-surface-variant max-w-2xl mx-auto font-body-md">Tools and technologies I use to build data solutions.</p>
+<section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 max-w-[1200px] mx-auto scroll-reveal" id="skills">
+  <div class="text-center mb-12 sm:mb-14">
+    <p class="text-xs font-semibold text-primary dark:text-primary-fixed-dim uppercase tracking-[0.2em] mb-2">Tech Stack</p>
+    <h2 class="text-2xl sm:text-3xl font-bold text-on-surface dark:text-surface font-headline-md">Technical Arsenal</h2>
+    <p class="text-sm sm:text-base text-on-surface-variant dark:text-surface-variant mt-2">
+      Tools and technologies I use to build data solutions.
+    </p>
   </div>
-  <div class="flex flex-wrap justify-center gap-lg">
-    <div class="w-24 h-24 p-sm rounded-xl border border-outline-variant/30 dark:border-outline/20 surface-card bg-surface dark:bg-surface-container-lowest flex flex-col items-center justify-center gap-sm tech-logo-card">
-      <img alt="Python" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZW_ge10kHge6eRehTZu5GiH2BN65PYbxMyrSfxRRr5mTUn5WGT8XJb1CMmgf-5VN3xQqIGDbtC3G330T_nAsT2hc-seOEy08_XMeRoZVpGr1JvWCgXeKjTXtNZbjCs2BwnT4NRpE_0c6TmCeGimAxLBmf9BsTxB2HFIkbf5MzkM3eQuSpc6a3dHIkuLR8FFqjtW8Y_E6XlAUd22XOLNiWpPj04XCzhXS3eNxA2kxatDT2ndTiBOX37_2b7RnMEVUv-W8Jqf9QQcrf" />
-      <span class="text-caption font-label-bold text-on-surface-variant">Python</span>
+
+  <!-- Category Pills -->
+  <div class="flex flex-wrap justify-center gap-2 mb-10">
+    <button class="skill-category-btn active" data-category="all">All</button>
+    <button class="skill-category-btn" data-category="programming">Programming</button>
+    <button class="skill-category-btn" data-category="data-science">Data Science</button>
+    <button class="skill-category-btn" data-category="visualization">Visualization</button>
+    <button class="skill-category-btn" data-category="tools">Tools</button>
+  </div>
+
+  <!-- Skills Grid -->
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4" id="skillsGrid">
+    <!-- Programming -->
+    <div class="skill-tile" data-category="programming">
+      <div class="skill-tile-icon">
+        <img alt="Python" class="w-8 h-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+      </div>
+      <span class="skill-tile-label">Python</span>
     </div>
-    <div class="w-24 h-24 p-sm rounded-xl border border-outline-variant/30 dark:border-outline/20 surface-card bg-surface dark:bg-surface-container-lowest flex flex-col items-center justify-center gap-sm tech-logo-card">
-      <img alt="MySQL" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkr5kjggMEfD5j_RfwaDz0bGm-FYkSCwwPI9xrxqN9VdThrGHN7p-1OClxmpAsVZlC8iT4HoFccpMy-ww0EBoJFDD_6wUfdnELNxRnJb9RLKSNMm_gV4JAFSaNrH11YpA_dYgjmzm6tQ1tijqIg1QeWGmFHbYxlqP4S_5fCN1GYfpPog2wSZ8cXMhUqBD-1ZLJ5x3e9b-H-JmmYIL7H03mKIN2r6xchcpza8B6Kflmet7Ed-3Gpgg7-oADF-ZAbZhv5_W_TcYYi-So" />
-      <span class="text-caption font-label-bold text-on-surface-variant">MySQL</span>
+    <div class="skill-tile" data-category="programming">
+      <div class="skill-tile-icon">
+        <img alt="MySQL" class="w-8 h-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
+      </div>
+      <span class="skill-tile-label">SQL</span>
     </div>
-    <div class="w-24 h-24 p-sm rounded-xl border border-outline-variant/30 dark:border-outline/20 surface-card bg-surface dark:bg-surface-container-lowest flex flex-col items-center justify-center gap-sm tech-logo-card">
-      <img alt="GitHub" class="w-8 h-8 tech-logo-dark-invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1682W7BUhrV0YNByPWxkaHD-Vctcli2ApTV3pFrqILwkziEzuD03h3Bvio7ZeUlOC9vVU9iIfr83DGaN_quyYFHN_lkeK3rwjz1K78bYSRDqa3B6GUAETjE6N6g9aX37o3fjvbFt2w8N46OU0D3IxV1jfAYhQCyvdiY2M-9x5BU5n74NmcidXubyNzAX4nfZ1F1YdxOXBC4k6RWHE3MNsCZUtp19VH9P7B3RCrYnfWqgerKnQkEzN81Gq52_mn_0Dw1egW4L6X-Yx" />
-      <span class="text-caption font-label-bold text-on-surface-variant">GitHub</span>
+
+    <!-- Data Science -->
+    <div class="skill-tile" data-category="data-science">
+      <div class="skill-tile-icon">
+        <img alt="Pandas" class="w-8 h-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" />
+      </div>
+      <span class="skill-tile-label">Pandas</span>
     </div>
-    <div class="w-24 h-24 p-sm rounded-xl border border-outline-variant/30 dark:border-outline/20 surface-card bg-surface dark:bg-surface-container-lowest flex flex-col items-center justify-center gap-sm tech-logo-card">
-      <img alt="Tableau" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxc3253h7R3Zlqi85KjKNK6w6iJSPrmeGgOg8Z5z25BqLzt6Znt98IJIDlpax_UKJ1i8olkhi319toguqLQe9OhWoK7IGdUk0guWINXaPZxfBWMr09Kou6lRTqQkJ4x8BycTggSD942Y9EKo0bfcWcXMJ4Vrx1rWPd7AJAd2xTc6YC61vRVMz9oTWha6VRnqOJXuy0n6PohAu9awfzD53UwGCJs_hgl0VU1RfT9HkTE2YuOrFtNAmXmBHMRU5aFun_jthpodk3ROp1" />
-      <span class="text-caption font-label-bold text-on-surface-variant">Tableau</span>
+    <div class="skill-tile" data-category="data-science">
+      <div class="skill-tile-icon">
+        <img alt="NumPy" class="w-8 h-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" />
+      </div>
+      <span class="skill-tile-label">NumPy</span>
     </div>
-    <div class="w-24 h-24 p-sm rounded-xl border border-outline-variant/30 dark:border-outline/20 surface-card bg-surface dark:bg-surface-container-lowest flex flex-col items-center justify-center gap-sm tech-logo-card">
-      <img alt="Streamlit" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACjlZF_d7WJRiQUAjIeE3XWcqv2z44ImPk-PKUhoDFgoP6ad_zSLiiV7Nnu4L8sMOrnddS-LPodFoZSLXalH8b_ioav5lRpCFqO4e2SWic7UHsSfBK65IU6DPpoLhTXLAPQECbae_1oq2cZqQOz8ngWlXgrduRAK1s1kJqQ-QRaAo-LV62ldR1WgZe2yENVSH0wDp-GJmdpX3ouoHP-ecJoJr-KGwJwhQ8_lFw7FLspfidareJZ9tB9m_wlUT1i45d_kU-yLzvFe0S" />
-      <span class="text-caption font-label-bold text-on-surface-variant">Streamlit</span>
+    <div class="skill-tile" data-category="data-science">
+      <div class="skill-tile-icon">
+        <img alt="Scikit-learn" class="w-8 h-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" />
+      </div>
+      <span class="skill-tile-label">Scikit-learn</span>
     </div>
-    <div class="w-24 h-24 p-sm rounded-xl border border-outline-variant/30 dark:border-outline/20 surface-card bg-surface dark:bg-surface-container-lowest flex flex-col items-center justify-center gap-sm tech-logo-card">
-      <img alt="Pandas" class="w-8 h-8 tech-logo-dark-invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlYpPQ71zeyYr4LWWiQZCStjhRyVfZ9vORKS3CM7X3DV2w57aa1Sucowv3Oax2uav2cF5vunD2ZiBXvkDPt_Kiqj6Olqc46XEG96yPjuqPL5Hgl2tRDYO_UpXHjAauD4_ddA0rl_IxzS_l1hOyS3EPbmBbO8R3oITElu_v3XkV9K4cKMf5cuME-nJRztbrlwC138LevrDVA4USeAuY1QhlAuczvoVAmYI9TazcAss9n0tdUB1XBEmtiQbghwEBrQwQ5Rss9j8QmDyi" />
-      <span class="text-caption font-label-bold text-on-surface-variant">Pandas</span>
+    <div class="skill-tile" data-category="data-science">
+      <div class="skill-tile-icon">
+        <span class="material-symbols-outlined text-3xl text-secondary dark:text-secondary-fixed-dim" style="font-variation-settings: 'FILL' 1;">merge_type</span>
+      </div>
+      <span class="skill-tile-label">RapidFuzz</span>
     </div>
-    <div class="w-24 h-24 p-sm rounded-xl border border-outline-variant/30 dark:border-outline/20 surface-card bg-surface dark:bg-surface-container-lowest flex flex-col items-center justify-center gap-sm tech-logo-card">
-      <img alt="Scikit-learn" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeB6tq9XgjZEpMKY9DX7FgQ1xLNmMlvTiHsrphY8fZI7lQH5SEXNP5kRUibhV8z8RsVKPL6idpRmB9W-KAffrzkYxj3hwFpsJxi5jS7WynfrZk2_0jPD77MIrRbX0F6t1DcQ94lWW2CLX1NMUzPq5m-WgJi3Y_leD1sIdEw0g3h5tQ0nGCF0BYink4Y_9dgGEVwznzxCVn-hd-9o08l0mU9Od9E6t4koWJubgfnccouVzWlzxOYUyaQVdej0w3xDhcotCvxo4YADRT" />
-      <span class="text-caption font-label-bold text-on-surface-variant">Scikit-learn</span>
+
+    <!-- Visualization -->
+    <div class="skill-tile" data-category="visualization">
+      <div class="skill-tile-icon">
+        <span class="material-symbols-outlined text-3xl text-tertiary dark:text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">analytics</span>
+      </div>
+      <span class="skill-tile-label">Tableau</span>
     </div>
-    <div class="w-24 h-24 p-sm rounded-xl border border-outline-variant/30 dark:border-outline/20 surface-card bg-surface dark:bg-surface-container-lowest flex flex-col items-center justify-center gap-sm tech-logo-card">
-      <img alt="Power BI" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM2TDiTPIdsR-4MtoJ71G-mFP1sagI0vN2UQedfjbe-ItqlL29Bq05pxhmjP8Mh3qC0SHgmNL_WijZ-oGwro5gQiN68uvEEsnL_ZN5hNVuSLg2lj8aJLL4mVFec2rnXeXAHjKRytxssR_NSJFGfY-mmmHZwfzRS1j7_wAn0lRnNO8njFJ9xRuUS6w-NhW_mJbSJafYE4hC-uydYpMjJACd_htajmAuhdOb-2lH-DRdg6eqvKs_oBbsqtgFwPKi3HpuyI57JxVy4r5s" />
-      <span class="text-caption font-label-bold text-on-surface-variant">PowerBI</span>
+    <div class="skill-tile" data-category="visualization">
+      <div class="skill-tile-icon">
+        <span class="material-symbols-outlined text-3xl text-tertiary dark:text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+      </div>
+      <span class="skill-tile-label">Power BI</span>
+    </div>
+    <div class="skill-tile" data-category="visualization">
+      <div class="skill-tile-icon">
+        <span class="material-symbols-outlined text-3xl text-tertiary dark:text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">table</span>
+      </div>
+      <span class="skill-tile-label">Google Sheets</span>
+    </div>
+    <div class="skill-tile" data-category="visualization">
+      <div class="skill-tile-icon">
+        <span class="material-symbols-outlined text-3xl text-tertiary dark:text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">grid_on</span>
+      </div>
+      <span class="skill-tile-label">Excel</span>
+    </div>
+
+    <!-- Tools -->
+    <div class="skill-tile" data-category="tools">
+      <div class="skill-tile-icon">
+        <img alt="GitHub" class="w-8 h-8 tech-logo-dark-invert" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+      </div>
+      <span class="skill-tile-label">GitHub</span>
+    </div>
+    <div class="skill-tile" data-category="tools">
+      <div class="skill-tile-icon">
+        <img alt="Jupyter" class="w-8 h-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" />
+      </div>
+      <span class="skill-tile-label">Jupyter</span>
+    </div>
+    <div class="skill-tile" data-category="tools">
+      <div class="skill-tile-icon">
+        <img alt="Google" class="w-8 h-8" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" />
+      </div>
+      <span class="skill-tile-label">Google Colab</span>
+    </div>
+    <div class="skill-tile" data-category="tools">
+      <div class="skill-tile-icon">
+        <span class="material-symbols-outlined text-3xl text-coral-red dark:text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">database</span>
+      </div>
+      <span class="skill-tile-label">Databricks</span>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.skill-category-btn');
+    const tiles = document.querySelectorAll('.skill-tile');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-category');
+
+        // Update active button
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter tiles
+        tiles.forEach(tile => {
+          const tileCategory = tile.getAttribute('data-category');
+          if (category === 'all' || tileCategory === category) {
+            tile.classList.remove('hidden');
+            tile.classList.add('visible');
+          } else {
+            tile.classList.add('hidden');
+            tile.classList.remove('visible');
+          }
+        });
+      });
+    });
+  });
+</script>

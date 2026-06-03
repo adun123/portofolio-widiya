@@ -1,23 +1,79 @@
 ---
 ---
 
-<nav class="fixed top-0 w-full z-50 bg-background/80 dark:bg-background/80 backdrop-blur-md border-b border-outline-variant/30 dark:border-outline/20">
-  <div class="flex justify-between items-center max-w-container-max mx-auto px-gutter py-md">
-    <div class="invisible font-display-xl-mobile md:font-headline-md text-headline-md tracking-tighter font-headline-md" aria-hidden="true">Widiya.dev</div>
-    <div class="hidden md:flex items-center gap-lg">
-      <a class="relative text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-bold text-label-bold after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary dark:after:bg-primary-fixed-dim after:transition-all after:duration-300 hover:after:w-full" href="#about">About</a>
-      <a class="relative text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-bold text-label-bold after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary dark:after:bg-primary-fixed-dim after:transition-all after:duration-300 hover:after:w-full" href="#journey">Journey</a>
-      <a class="relative text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-bold text-label-bold after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary dark:after:bg-primary-fixed-dim after:transition-all after:duration-300 hover:after:w-full" href="#skills">Skills</a>
-      <a class="relative text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-bold text-label-bold after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary dark:after:bg-primary-fixed-dim after:transition-all after:duration-300 hover:after:w-full" href="#work">Work</a>
-      <a class="relative text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-bold text-label-bold after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary dark:after:bg-primary-fixed-dim after:transition-all after:duration-300 hover:after:w-full" href="#contact">Contact</a>
+<nav class="fixed top-0 w-full z-50 bg-background/80 dark:bg-on-background/80 backdrop-blur-xl border-b border-outline-variant/15 dark:border-outline/10">
+  <div class="flex justify-between items-center max-w-[1200px] mx-auto px-4 sm:px-6 h-14">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-1.5">
+      <span class="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
+        <span class="text-on-primary font-bold text-xs">W</span>
+      </span>
+      <span class="font-headline-md text-base font-bold text-on-surface dark:text-surface">Widiya Pramestika</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-6">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#journey">Journey</a>
+      <a class="nav-link" href="#skills">Skills</a>
+      <a class="nav-link" href="#work">Work</a>
+      <a class="nav-link" href="#contact">Contact</a>
     </div>
-    <div class="flex items-center gap-md">
-      <button aria-label="Toggle Theme" class="relative w-[52px] h-[26px] rounded-full bg-surface-variant dark:bg-surface-variant flex items-center p-[3px] transition-all duration-300 hover:shadow-md hover:shadow-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40" id="themeToggle">
-        <div class="w-5 h-5 rounded-full bg-surface dark:bg-surface shadow-sm flex items-center justify-center theme-toggle-spring" id="themeThumb">
-          <span class="material-symbols-outlined text-[12px] text-on-surface-variant dark:hidden" style="font-variation-settings: 'FILL' 1;">light_mode</span>
-          <span class="material-symbols-outlined text-[12px] text-on-surface-variant hidden dark:block" style="font-variation-settings: 'FILL' 1;">dark_mode</span>
-        </div>
+
+    <!-- Right: theme toggle + hamburger -->
+    <div class="flex items-center gap-2">
+      <button aria-label="Toggle Theme" class="w-9 h-9 rounded-full flex items-center justify-center border border-outline-variant/30 dark:border-outline/20 hover:bg-surface-variant/50 dark:hover:bg-inverse-surface/20 transition-colors" id="themeToggle">
+        <span class="material-symbols-outlined text-[18px] text-on-surface-variant dark:text-surface-variant dark:hidden" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+        <span class="material-symbols-outlined text-[18px] text-on-surface-variant dark:text-surface-variant hidden dark:block" style="font-variation-settings: 'FILL' 1;">dark_mode</span>
+      </button>
+
+      <!-- Hamburger mobile -->
+      <button aria-label="Open menu" class="md:hidden w-9 h-9 rounded-full flex flex-col justify-center items-center gap-[5px] border border-outline-variant/30 dark:border-outline/20 hover:bg-surface-variant/50 dark:hover:bg-inverse-surface/20 transition-colors" id="hamburgerBtn">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
       </button>
     </div>
   </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu md:hidden" id="mobileMenu">
+    <div class="flex flex-col items-center gap-5 py-6">
+      <a class="mobile-nav-link" href="#about">About</a>
+      <a class="mobile-nav-link" href="#journey">Journey</a>
+      <a class="mobile-nav-link" href="#skills">Skills</a>
+      <a class="mobile-nav-link" href="#work">Work</a>
+      <a class="mobile-nav-link" href="#contact">Contact</a>
+      <a class="mobile-nav-link flex items-center gap-2 text-primary dark:text-primary-fixed-dim" href="/cv/Widiya-Pramestika-CV.pdf" download="Widiya-Pramestika-CV.pdf">
+        <span class="material-symbols-outlined text-lg">download</span>
+        Download CV
+      </a>
+    </div>
+  </div>
 </nav>
+
+<script>
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const themeToggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+    });
+  }
+
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('active');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburgerBtn.classList.remove('active');
+      });
+    });
+  }
+</script>

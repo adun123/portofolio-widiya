@@ -1,108 +1,123 @@
 ---
 ---
 
-<section class="relative min-h-[80vh] flex flex-col justify-center items-center text-center px-gutter overflow-hidden scroll-reveal">
-  <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-    <!-- Aurora Background -->
-    <div class="absolute inset-0 aurora-container">
-      <div class="aurora-orb aurora-orb-1"></div>
-      <div class="aurora-orb aurora-orb-2"></div>
-      <div class="aurora-orb aurora-orb-3"></div>
-      <div class="aurora-orb aurora-orb-4"></div>
-    </div>
-    <div class="absolute inset-[-100%] hero-particle-grid"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/60 dark:from-on-background/60 dark:to-on-background/60 z-10"></div>
-  </div>
-  <div class="relative z-20 max-w-4xl mx-auto space-y-xl">
-    <div class="space-y-lg flex flex-col items-center">
-      <p class="font-label-bold text-label-bold text-primary dark:text-primary-fixed-dim uppercase tracking-widest animate-[fadeIn_1s_ease-out]">Hello! I'm Widiya Pramestika</p>
-      <h1 class="font-hero text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-on-surface dark:text-surface leading-[1.1] font-bold">
-        I am a<br/>
-        <span class="text-primary dark:text-primary-fixed-dim rotating-text"><span class="rotating-text-inner" id="heroRotator">Data Analyst</span></span>
+<section class="relative min-h-[85vh] flex flex-col justify-center items-center text-center px-4 sm:px-6 overflow-hidden scroll-reveal" id="hero">
+  <!-- Canvas animated data nodes -->
+  <canvas class="absolute inset-0 w-full h-full z-0 pointer-events-none" id="heroCanvas"></canvas>
+
+  <div class="relative z-10 max-w-3xl mx-auto space-y-8 sm:space-y-10">
+    <div class="space-y-4 sm:space-y-5 flex flex-col items-center">
+      <p class="font-label-bold text-xs sm:text-sm text-primary dark:text-primary-fixed-dim uppercase tracking-[0.2em] animate-[fadeIn_1s_ease-out]">Widiya Pramestika</p>
+      <h1 class="font-hero text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl text-on-surface dark:text-surface leading-[1.1] font-bold">
+        Data Analyst &amp;<br/>
+        Data Science Enthusiast<br/>
+        <span class="rotating-text"><span class="rotating-text-inner gradient-text" id="heroRotator">Data Analyst</span></span>
       </h1>
-      <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-surface-variant max-w-2xl mx-auto opacity-80 text-center">
-        Welcome to My Personal Portofolio
+      <p class="text-base sm:text-lg text-on-surface-variant dark:text-surface-variant max-w-2xl mx-auto opacity-80 text-center">
+        Turning cleaned data, automated workflows, dashboards, and machine learning experiments into decisions people can trust.
       </p>
     </div>
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-md pt-lg reveal-text reveal-delay-1" style="animation-delay: 2.4s;">
-      <a class="px-lg py-md rounded-full bg-primary text-on-primary hover:bg-primary/90 btn-hover font-label-bold text-label-bold flex items-center gap-sm" href="#work">
-        View My Work <span class="material-symbols-outlined text-body-md">arrow_downward</span>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-4 reveal-text reveal-delay-1" style="animation-delay: 2.4s;">
+      <a class="w-full sm:w-auto px-6 py-3 rounded-full btn-gradient btn-hover font-semibold text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/20" href="#work">
+        View My Work <span class="material-symbols-outlined text-base">arrow_downward</span>
       </a>
-      <a class="px-lg py-md rounded-full border border-primary text-primary dark:text-primary-fixed-dim dark:border-primary-fixed-dim hover:bg-primary/5 btn-hover font-label-bold text-label-bold flex items-center gap-sm" href="#contact">
-        Let's Connect <span class="material-symbols-outlined text-body-md">arrow_forward</span>
+      <a class="w-full sm:w-auto px-6 py-3 rounded-full border border-primary/60 text-primary dark:text-primary-fixed-dim dark:border-primary-fixed-dim/60 hover:bg-primary/5 btn-hover font-semibold text-sm flex items-center justify-center gap-2" href="#contact">
+        Let's Connect <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+      <a class="w-full sm:w-auto px-6 py-3 rounded-full bg-on-surface text-surface dark:bg-surface dark:text-on-surface hover:opacity-90 btn-hover font-semibold text-sm flex items-center justify-center gap-2" href="/cv/Widiya-Pramestika-CV.pdf" download="Widiya-Pramestika-CV.pdf">
+        Download CV <span class="material-symbols-outlined text-base">download</span>
       </a>
     </div>
   </div>
 </section>
 
-<style>
-  .aurora-container {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 1;
+<script>
+(function() {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let width, height, nodes = [], animId;
+  const NODE_COUNT = 50;
+  const CONNECT_DIST = 140;
+
+  function resize() {
+    const rect = canvas.parentElement.getBoundingClientRect();
+    width = canvas.width = rect.width;
+    height = canvas.height = rect.height;
   }
 
-  .aurora-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.4;
-    will-change: transform;
-  }
-
-  html.dark .aurora-orb {
-    opacity: 0.25;
-  }
-
-  .aurora-orb-1 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, #b41d25 0%, transparent 70%);
-    top: -10%;
-    left: -5%;
-    animation: auroraFloat 20s ease-in-out infinite alternate;
-  }
-
-  .aurora-orb-2 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, #6d4e9f 0%, transparent 70%);
-    top: 20%;
-    right: -8%;
-    animation: auroraFloat 25s ease-in-out infinite alternate-reverse;
-  }
-
-  .aurora-orb-3 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, #E84545 0%, transparent 70%);
-    bottom: -5%;
-    left: 30%;
-    animation: auroraFloat 18s ease-in-out infinite alternate;
-  }
-
-  .aurora-orb-4 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, #008280 0%, transparent 70%);
-    top: 5%;
-    left: 50%;
-    animation: auroraFloat 22s ease-in-out infinite alternate-reverse;
-  }
-
-  @keyframes auroraFloat {
-    0% {
-      transform: translate(0, 0) scale(1);
-    }
-    33% {
-      transform: translate(30px, -20px) scale(1.1);
-    }
-    66% {
-      transform: translate(-20px, 15px) scale(0.9);
-    }
-    100% {
-      transform: translate(15px, -10px) scale(1.05);
+  function createNodes() {
+    nodes = [];
+    for (let i = 0; i < NODE_COUNT; i++) {
+      nodes.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 1.5
+      });
     }
   }
-</style>
+
+  function getColor() {
+    return document.documentElement.classList.contains('dark')
+      ? { dot: 'rgba(255,179,174,0.6)', line: 'rgba(255,179,174,0.12)' }
+      : { dot: 'rgba(180,29,37,0.45)', line: 'rgba(180,29,37,0.08)' };
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    const colors = getColor();
+
+    // Draw connections
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < CONNECT_DIST) {
+          const opacity = 1 - dist / CONNECT_DIST;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = colors.line.replace('0.08', (0.08 * opacity).toFixed(3)).replace('0.12', (0.12 * opacity).toFixed(3));
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes
+    for (const node of nodes) {
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
+      ctx.fillStyle = colors.dot;
+      ctx.fill();
+    }
+  }
+
+  function update() {
+    for (const node of nodes) {
+      node.x += node.vx;
+      node.y += node.vy;
+      if (node.x < 0 || node.x > width) node.vx *= -1;
+      if (node.y < 0 || node.y > height) node.vy *= -1;
+    }
+  }
+
+  function loop() {
+    update();
+    draw();
+    animId = requestAnimationFrame(loop);
+  }
+
+  function init() {
+    resize();
+    createNodes();
+    loop();
+  }
+
+  window.addEventListener('resize', () => { resize(); createNodes(); });
+  init();
+})();
+</script>

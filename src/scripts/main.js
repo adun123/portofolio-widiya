@@ -1,20 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const html = document.documentElement;
-  const themeToggle = document.getElementById('themeToggle');
-  const themeThumb = document.getElementById('themeThumb');
 
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
     html.classList.add('dark');
-    if (themeThumb) themeThumb.style.transform = 'translateX(24px)';
-  }
-
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      html.classList.toggle('dark');
-      if (themeThumb) {
-        themeThumb.style.transform = html.classList.contains('dark') ? 'translateX(24px)' : 'translateX(0)';
-      }
-    });
   }
 
   const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
@@ -67,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const roles = ["Data Analyst", "Data Scientist", "AI Explorer"];
+  const roles = ["Data Analyst", "Data Scientist", "Data Annotator"];
   let roleIndex = 0;
   const heroRotator = document.getElementById('heroRotator');
   if (heroRotator) {
