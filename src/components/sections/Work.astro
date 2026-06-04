@@ -10,10 +10,13 @@
   <!-- Project List -->
   <div class="project-list" id="projectGrid">
     <!-- Project 1 -->
-    <article class="project-item">
+    <article class="project-item" data-project="1">
       <div class="project-meta">
         <span class="project-number">01</span>
         <span class="project-date">Jan — May 2025</span>
+      </div>
+      <div class="project-thumbnail">
+        <img src="/images/projects/project-1.svg" alt="Automation Data Cleaning" loading="lazy" />
       </div>
       <div class="project-content">
         <div class="project-header">
@@ -36,10 +39,13 @@
     </article>
 
     <!-- Project 2 -->
-    <article class="project-item">
+    <article class="project-item" data-project="2">
       <div class="project-meta">
         <span class="project-number">02</span>
         <span class="project-date">Jun — Aug 2024</span>
+      </div>
+      <div class="project-thumbnail">
+        <img src="/images/projects/project-2.svg" alt="Prediksi Genre Musik" loading="lazy" />
       </div>
       <div class="project-content">
         <div class="project-header">
@@ -61,10 +67,13 @@
     </article>
 
     <!-- Project 3 -->
-    <article class="project-item">
+    <article class="project-item" data-project="3">
       <div class="project-meta">
         <span class="project-number">03</span>
         <span class="project-date">Jun — Aug 2024</span>
+      </div>
+      <div class="project-thumbnail">
+        <img src="/images/projects/project-3.svg" alt="E-Literasi" loading="lazy" />
       </div>
       <div class="project-content">
         <div class="project-header">
@@ -86,10 +95,13 @@
     </article>
 
     <!-- Project 4 -->
-    <article class="project-item">
+    <article class="project-item" data-project="4">
       <div class="project-meta">
         <span class="project-number">04</span>
         <span class="project-date">Apr — Oct 2023</span>
+      </div>
+      <div class="project-thumbnail">
+        <img src="/images/projects/project-4.svg" alt="Traco" loading="lazy" />
       </div>
       <div class="project-content">
         <div class="project-header">
@@ -111,10 +123,13 @@
     </article>
 
     <!-- Project 5 -->
-    <article class="project-item">
+    <article class="project-item" data-project="5">
       <div class="project-meta">
         <span class="project-number">05</span>
         <span class="project-date">Nov 2022 — Mar 2023</span>
+      </div>
+      <div class="project-thumbnail">
+        <img src="/images/projects/project-5.svg" alt="POS Toko" loading="lazy" />
       </div>
       <div class="project-content">
         <div class="project-header">
@@ -136,3 +151,27 @@
     </article>
   </div>
 </section>
+
+<!-- Project Modal -->
+<div id="projectModal" class="project-modal">
+  <div class="project-modal-overlay"></div>
+  <div class="project-modal-content">
+    <button class="project-modal-close" aria-label="Close modal">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="project-modal-body">
+      <div class="project-modal-image">
+        <img id="modalImage" src="" alt="" />
+      </div>
+      <div class="project-modal-info">
+        <span class="project-modal-tag" id="modalTag"></span>
+        <h3 class="project-modal-title" id="modalTitle"></h3>
+        <p class="project-modal-desc" id="modalDesc"></p>
+        <div class="project-modal-tools" id="modalTools"></div>
+        <div class="project-modal-meta">
+          <span id="modalDate"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
