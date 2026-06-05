@@ -66,47 +66,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalClose = document.querySelector('.project-modal-close');
   const modalOverlay = document.querySelector('.project-modal-overlay');
 
-  // Project data for modal
+  // Project data for modal (description extended)
   const projectData = {
     1: {
-      title: "Automation Data Cleaning",
-      tag: "Fuzzy Matching",
       desc: "Automated text cleaning and normalization using Python, Pandas, and NumPy. Applied fuzzy matching algorithms (RapidFuzz, FuzzyWuzzy) to detect and reconcile inconsistent or duplicate records. This project significantly improved data quality and reduced manual cleaning time by automating the entire pipeline.",
-      tools: ["Python", "Pandas", "NumPy", "RapidFuzz", "FuzzyWuzzy"],
-      image: "/images/projects/project-1.svg",
-      date: "January — May 2025"
+      tools: ["Python", "Pandas", "NumPy", "RapidFuzz", "FuzzyWuzzy"]
     },
     2: {
-      title: "Prediksi Genre Musik",
-      tag: "Major/Minor",
       desc: "Machine learning classification to predict music genre characteristics. Analyzed key features like tempo, energy, and mode to build a reliable predictive model with accuracy evaluation. The model achieved high accuracy in distinguishing between major and minor tonalities.",
-      tools: ["Scikit-learn", "Python", "Classification", "Data Analysis"],
-      image: "/images/projects/project-2.svg",
-      date: "June — August 2024"
+      tools: ["Scikit-learn", "Python", "Classification", "Data Analysis"]
     },
     3: {
-      title: "E-Literasi",
-      tag: "Flutter App",
       desc: "Led end-to-end development of a digital reading application as Project Manager. Coordinated developers and UI/UX designers, defined timelines, and oversaw feature planning. Successfully delivered a user-friendly application that promotes digital literacy.",
-      tools: ["Flutter", "Project Management", "Team Lead", "UI/UX Coordination"],
-      image: "/images/projects/project-3.svg",
-      date: "June — August 2024"
+      tools: ["Flutter", "Project Management", "Team Lead", "UI/UX Coordination"]
     },
     4: {
-      title: "Traco",
-      tag: "PKM Funded",
       desc: "Smart City transportation system for Bandung. Mobile-based app developed for PKM competition — successfully received funding. Handled version control, unit testing, and UI testing. The application helps citizens navigate public transportation more efficiently.",
-      tools: ["Mobile App", "Git", "Testing", "Smart City"],
-      image: "/images/projects/project-4.svg",
-      date: "April — October 2023"
+      tools: ["Mobile App", "Git", "Testing", "Smart City"]
     },
     5: {
-      title: "POS Toko",
-      tag: "Python",
       desc: "Simple Point of Sale application for small stores. Built with modular programming practices, implemented CRUD features for product data and transaction processing. The application provides an intuitive interface for managing sales and inventory.",
-      tools: ["Python", "CRUD", "Desktop App", "Modular Programming"],
-      image: "/images/projects/project-5.svg",
-      date: "November 2022 — March 2023"
+      tools: ["Python", "CRUD", "Desktop App", "Modular Programming"]
     }
   };
 
@@ -117,12 +97,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const project = projectData[projectId];
       
       if (project) {
-        modalImage.src = project.image;
-        modalImage.alt = project.title;
-        modalTag.textContent = project.tag;
-        modalTitle.textContent = project.title;
+        // Get data directly from the clicked project item
+        const thumbnail = item.querySelector('.project-thumbnail img');
+        const title = item.querySelector('.project-title');
+        const tag = item.querySelector('.project-tag');
+        const date = item.querySelector('.project-date');
+        
+        // Set modal image from the project list thumbnail
+        if (thumbnail) {
+          modalImage.src = thumbnail.src;
+          modalImage.alt = thumbnail.alt;
+        }
+        
+        // Set text content from the project list
+        if (tag) modalTag.textContent = tag.textContent;
+        if (title) modalTitle.textContent = title.textContent;
         modalDesc.textContent = project.desc;
-        modalDate.textContent = project.date;
+        if (date) modalDate.textContent = date.textContent;
         
         // Clear and populate tools
         modalTools.innerHTML = '';
